@@ -1,6 +1,4 @@
 #include "main.h"
-#include <stdarg.h>
-#include <unistd.h>
 /**
  * printf_string - print a string.
  * @val: argumen t.
