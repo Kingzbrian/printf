@@ -6,26 +6,29 @@
 #include <stdarg.h>
 #include <limits.h>
 #include <unistd.h>
-
-/**
- * struct format - match the conversion specifiers for printf
- * @id: type char pointer of the specifier i.e (l, h) for (d, i, u, o, x, X)
- * @f: type pointer to function for the conversion specifier
- *
- */
-typedef struct format
-{
-	char *id;
-	int (*f)();
-} convert_match;
-
-int _strlen(char *s);
-int _strlenc(const char *s);
-int _strlenc(const char *s);
-int printf_37(void);
-int printf_char(va_list val);
-int printf_string(va_list val);
 int _putchar(char c);
 int _printf(const char *format, ...);
+int print_char(va_list c);
+int print_string(va_list s);
+int print_int(va_list i);
+int print_dec(va_list d);
+int print_rev(va_list r);
+int print_bin(va_list b);
+int print_unsig(va_list u);
+int print_octal(va_list o);
+int print_x(va_list x);
+int print_X(va_list X);
+int print_rot13(va_list R);
+/**
+  * struct code_format - Struct format
+  *
+  * @sc: The specifiers
+  * @f: The function associated
+  */
+typedef struct code_format
+{
+	char *sc;
+	int (*f)(va_list);
+} code_f;
 
-#endif
+#endif /* MAINH */
