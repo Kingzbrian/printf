@@ -16,7 +16,7 @@
 typedef struct format
 {
 	char *id;
-	int (*f)(va_list);
+	int (*f)();
 } convert_match;
 
 int _strlen(char *s);
